@@ -23,6 +23,12 @@ class ProductPage(BasePage):
         name_product = self.browser.find_element(*ProductPageLocators.PRODUCT_NAME)
         assert approved_name.text == name_product.text, 'Name is not same'
 
+    def should_not_be_success_message(self):
+        assert self.is_not_element_present(*ProductPageLocators.APPROVE_NAME), \
+            "Success message is presented, but should not be"
 
+    def should_be_disappeared(self):
+        assert self.is_disappeared(*ProductPageLocators.APPROVE_NAME), \
+            "Success message is presented, but should not be"
 
 
