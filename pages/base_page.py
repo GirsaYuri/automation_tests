@@ -5,6 +5,7 @@ from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from .locators import BasePageLocators
+from .locators import BasketPageLocators
 
 class BasePage():
     def __init__(self, browser, url):
@@ -13,7 +14,7 @@ class BasePage():
         self.browser.implicitly_wait(10)
 
     def go_to_login_page(self):
-        link = self.browser.find_element(*BasePageLocators.LOGIN_LINK_INVALID)
+        link = self.browser.find_element(*BasePageLocators.LOGIN_LINK)
         link.click()
 
     def open(self):
@@ -59,3 +60,10 @@ class BasePage():
             alert.accept()
         except NoAlertPresentException:
             print("No second alert presented")
+
+    def go_to_basket(self):
+        go_basket = self.browser.find_element(*BasketPageLocators.BASKET_LINK)
+        go_basket.click()
+
+
+

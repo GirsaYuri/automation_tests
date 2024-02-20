@@ -2,6 +2,7 @@ from .base_page import BasePage
 from .locators import ProductPageLocators
 
 
+
 class ProductPage(BasePage):
 
     # def should_be_product_page(self):
@@ -30,5 +31,6 @@ class ProductPage(BasePage):
     def should_be_disappeared(self):
         assert self.is_disappeared(*ProductPageLocators.APPROVE_NAME), \
             "Success message is presented, but should not be"
+
 
 
