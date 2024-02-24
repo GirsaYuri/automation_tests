@@ -26,7 +26,7 @@ class ProductPageLocators():
 
 
 class BasePageLocators():
-    LOGIN_LINK = (By.ID, "registration_link")
+    LOGIN_LINK = (By.XPATH, "/html/body/div[1]/div[2]/div/ul/li/a")
     LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link_inc")
     USER_ICON = (By.CSS_SELECTOR, ".icon-user")
 
