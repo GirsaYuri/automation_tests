@@ -71,6 +71,8 @@ def test_guest_cant_see_product_in_basket_opened_from_product_page(browser):
     page.go_to_basket()
     page.is_not_element_present(*BasketPageLocators.BASKET_ITEMS)
     page.should_be_basket_is_empty_text()
+    # Я добавил доп. проверку на негативный сценарий, поэтому тест должен падать и я его пометил как Xfail
+    # Если убрать тест ниже то будет Passed 
     page.should_be_basket_has_items()
 
 
